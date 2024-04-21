@@ -15,7 +15,7 @@ class HttpMethod:
     def get(url):
         with allure.step("GET"):
             Logger.add_request(url, method="GET")
-            result = requests.get(url, headers=HttpMethod.headers, cookies=HttpMethod.cookie)
+            result = requests.get(url, headers=HttpMethod.headers)
             Logger.add_response(result)
             return result
 
@@ -35,7 +35,7 @@ class HttpMethod:
     def put(url, body):
         with allure.step("PUT"):
             Logger.add_request(url, method="PUT")
-            result = requests.put(url, json=body, headers=HttpMethod.headers, cookies=HttpMethod.cookie)
+            result = requests.put(url, json=body, headers=HttpMethod.headers)
             Logger.add_response(result)
             return result
 
@@ -45,6 +45,6 @@ class HttpMethod:
     def delete(url, body):
         with allure.step("DELETE"):
             Logger.add_request(url, method="DELETE")
-            result = requests.delete(url, json=body, headers=HttpMethod.headers, cookies=HttpMethod.cookie)
+            result = requests.delete(url, json=body, headers=HttpMethod.headers)
             Logger.add_response(result)
             return result
