@@ -73,7 +73,7 @@ class Krasnodar220VoltApi():
         df = pd.DataFrame(products)
 
         # Записываем DataFrame в Excel файл
-        df.to_excel('Бензопилы.xlsx', index=False)
+        df.to_excel('C:\\Users\\volch\\PycharmProjects\\apiProject2\\Бензопилы.xlsx', index=False)
 
         print("Данные успешно записаны в файл 'Бензопилы.xlsx'")
 
