@@ -1,0 +1,13 @@
+
+-----
+Test: test_krasnodar_220_volt_api.py::TestTakeCategoryAndProductList::test_take_category_and_product_list (call)
+Time: 2024-04-21 20:45:21.689749
+Request method: POST
+Request URL: https://krasnodar.220-volt.ru/tracker_advcake/
+
+Response code: 200
+Response text: {"user":{"email":"fbdb1d1b18aa6c08324b7d64b71fb76370690e1d"},"currentCategory":{"name":"Сад и дача","id":339},"basketProducts":[],"products":[{"id":"735229","name":"Бензопила HYUNDAI Х 5320"},{"id":"735227","name":"Бензопила HYUNDAI Х 3916"},{"name":"Бензопила HYUNDAI Х 4118","id":"735228"},{"name":"Бензопила HYUNDAI X 520","id":"697556"},{"name":"Бензопила HYUNDAI X 420","id":"697555"},{"name":"Бензопила HYUNDAI X 370","id":"697554"}],"pageType":3}
+Response headers: {'Server': 'nginx', 'Date': 'Sun, 21 Apr 2024 17:45:24 GMT', 'Content-Type': 'application/json; charset=windows-1251', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Set-Cookie': 'chkuidsrv=35e2ca3a69fa466aadf3bed420a32884; expires=Sun, 21-Apr-24 18:45:24 GMT; max-age=3600; domain=.220-volt.ru; path=/, site_version=desktop; expires=Thu, 20 Jun 2024 17:45:24 GMT; path=/; domain=.220-volt.ru, site_version=desktop; expires=Thu, 20 Jun 2024 17:45:24 GMT; path=/; domain=.220-volt.ru, telemetryToken=A53WpsneRNDlDxriGk0KwPDwjj6Ha1BM5rNSR1QLwR54; expires=Fri, 20 Apr 2029 17:45:24 GMT; path=/; domain=.220-volt.ru, backendStart=1713721524125; expires=Fri, 20 Apr 2029 17:45:24 GMT; path=/; domain=.220-volt.ru, backendEnd=1713721524178; expires=Fri, 20 Apr 2029 17:45:24 GMT; path=/; domain=.220-volt.ru, system_id=b7b511b01edf6dae811638d581e8575az1713721524; path=/;Max-Age=1800;Domain=.220-volt.ru', 'Expires': 'Thu, 01 Jan 1970 00:00:00 GMT', 'X-Elapsed': '0.0529', 'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0', 'Access-Control-Allow-Methods': 'OPTIONS, GET, POST, PUT, HEAD, PATCH, DELETE, OPTIONS', 'Access-Control-Allow-Origin': 'https://*220-volt.ru', 'Pragma': 'no-cache', 'Access-Control-Allow-Headers': 'Content-Type', 'Last-Modified': 'Sun, 21 Apr 2024 17:45:24 GMT', 'RID': 'ZiVQtPbMSrhTfCSHPYMeeAAAABg', 'Content-Encoding': 'gzip'}
+Response cookies: {'chkuidsrv': '35e2ca3a69fa466aadf3bed420a32884', 'site_version': 'desktop', 'telemetryToken': 'A53WpsneRNDlDxriGk0KwPDwjj6Ha1BM5rNSR1QLwR54', 'backendStart': '1713721524125', 'backendEnd': '1713721524178', 'system_id': 'b7b511b01edf6dae811638d581e8575az1713721524'}
+
+-----
