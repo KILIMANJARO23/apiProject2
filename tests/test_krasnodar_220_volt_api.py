@@ -1,6 +1,4 @@
-import json
 import allure
-from requests import Response
 from utils.checking import Checking
 from utils.api import Krasnodar220VoltApi
 
@@ -14,10 +12,7 @@ class TestTakeCategoryAndProductList():
         print("Метод POST")
         result_post = Krasnodar220VoltApi.category_and_product_list()
         Checking.check_status_code(result_post, 200)
-        # check_post = result_post.json()
-        # Checking.check_json_token(result_post, ['status', 'place_id', 'scope', 'reference', 'id'])
-        # # token = json.loads(result_post.text)
-        # Checking.check_json_value(result_post, 'status', 'OK')
+
 
 
 

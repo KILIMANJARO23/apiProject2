@@ -43,11 +43,11 @@ class Krasnodar220VoltApi():
             products: List[Product]
 
         # Пример данных продуктов
-        product_data = products
+        products
 
         # Проверяем данные продуктов
         try:
-            products1 = Products(products=product_data)
+            products1 = Products(products=products)
             print(products1.dict())
             print("Проверка типов данных прошла успешно.")
         except ValidationError as e:
