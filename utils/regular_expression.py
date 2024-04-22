@@ -16,6 +16,9 @@
 import re
 
 class RegularExpressions():
+
+    """Функция, реализующая срезы"""
+
     def creating_a_slice(products):
         what_to_remove = r"Бензопила HYUNDAI "
         remove_pattern = what_to_remove
