@@ -1,20 +1,11 @@
 import datetime
 import os
-import glob
 
 from requests import Response
 
 
 class Logger():
-    # file_name = f"C:\\Users\\volch\\PycharmProjects\\apiProject2\\logs\\log_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".log"
-    log_directory = "C:\\Users\\volch\\PycharmProjects\\apiProject2\\logs"
-    file_name = os.path.join(log_directory, f"log_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log")
-
-    @classmethod
-    def remove_old_logs(cls):
-        # Удаляем все файлы логов из папки logs
-        for log_file in glob.glob(os.path.join(cls.log_directory, "*.log")):
-            os.remove(log_file)
+    file_name = f"C:\\Users\\volch\\PycharmProjects\\apiProject2\\logs\\log_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".log"
 
     @classmethod
     def write_log_to_file(cls, data: str):
@@ -23,8 +14,6 @@ class Logger():
 
     @classmethod
     def add_request(cls, url: str, method: str):
-        cls.remove_old_logs()  # Удаляем старые логи перед созданием нового
-
         test_name = os.environ.get('PYTEST_CURRENT_TEST')
 
         data_to_add = f"\n-----\n"

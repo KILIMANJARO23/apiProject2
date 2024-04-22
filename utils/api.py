@@ -1,5 +1,5 @@
 from utils.http_methods import HttpMethod
-from typing import List, Type, Any
+from typing import List
 from pydantic import BaseModel, ValidationError
 import re
 import pandas as pd
@@ -33,51 +33,49 @@ class Krasnodar220VoltApi():
 
 
         """Верификация данных через Pydantic модель"""
-        # # Определяем модель для продукта
-        # class Product(BaseModel):
-        #     id: str
-        #     name: str
-        #
-        # # Определяем модель для списка продуктов
-        # class Products(BaseModel):
-        #     products: List[Product]
-        #
-        # # Пример данных продуктов
-        # products
-        #
-        # # Проверяем данные продуктов
-        # try:
-        #     products1 = Products(products=products)
-        #     print(products1.dict())
-        #     print("Проверка типов данных прошла успешно.")
-        # except ValidationError as e:
-        #     print(e.json())
+        # Определяем модель для продукта
+        class Product(BaseModel):
+            id: str
+            name: str
+
+        # Определяем модель для списка продуктов
+        class Products(BaseModel):
+            products: List[Product]
+
+        # Пример данных продуктов
+        product_data = products
+
+        # Проверяем данные продуктов
+        try:
+            products1 = Products(products=product_data)
+            print(products1.dict())
+            print("Проверка типов данных прошла успешно.")
+        except ValidationError as e:
+            print(e.json())
 
 
 
+        """Регулярное выражение для поиска и удаления "Бензопила HYUNDAI"""
+
+        pattern = r"Бензопила HYUNDAI "
+
+        # Проход по каждому словарю в списке и удаление "Бензопила HYUNDAI"
+        for product in products:
+            for key in product:
+                product[key] = re.sub(pattern, '', product[key])
+
+        # Вывод обновленного списка
+        print(products)
 
 
-        # """Регулярное выражение для поиска и удаления "Бензопила HYUNDAI"""
-        #
-        # pattern = r"Бензопила HYUNDAI "
-        #
-        # # Проход по каждому словарю в списке и удаление "Бензопила HYUNDAI"
-        # for product in products:
-        #     for key in product:
-        #         product[key] = re.sub(pattern, '', product[key])
-        #
-        # # Вывод обновленного списка
-        # print(products)
-        #
-        #
-        # """Создание Excel файла c укороченными названиями моделей бензопил и их id"""
-        # # Создаем DataFrame из списка
-        # df = pd.DataFrame(products)
-        #
-        # # Записываем DataFrame в Excel файл
-        # df.to_excel('C:\\Users\\volch\\PycharmProjects\\apiProject2\\Бензопилы.xlsx', index=False)
-        #
-        # print("Данные успешно записаны в файл 'Бензопилы.xlsx'")
+        """Создание Excel файла c укороченными названиями моделей бензопил и их id"""
+        # Создаем DataFrame из списка
+        df = pd.DataFrame(products)
+
+        # Записываем DataFrame в Excel файл
+        df.to_excel('C:\\Users\\volch\\PycharmProjects\\apiProject2\\Бензопилы.xlsx', index=False)
+
+        print("Данные успешно записаны в файл 'Бензопилы.xlsx'")
 
         return result_post
 
