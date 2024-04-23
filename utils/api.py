@@ -32,31 +32,6 @@ class Krasnodar220VoltApi():
 
 
 
-        """Верификация данных через Pydantic модель"""
-        # # Определяем модель для продукта
-        # class Product(BaseModel):
-        #     id: str
-        #     name: str
-        #
-        # # Определяем модель для списка продуктов
-        # class Products(BaseModel):
-        #     products: List[Product]
-        #
-        # # Пример данных продуктов
-        # products
-        #
-        # # Проверяем данные продуктов
-        # try:
-        #     products1 = Products(products=products)
-        #     print(products1.dict())
-        #     print("Проверка типов данных прошла успешно.")
-        # except ValidationError as e:
-        #     print(e.json())
-
-
-
-
-
         # """Регулярное выражение для поиска и удаления "Бензопила HYUNDAI"""
         #
         # pattern = r"Бензопила HYUNDAI "
@@ -71,6 +46,7 @@ class Krasnodar220VoltApi():
         #
         #
         # """Создание Excel файла c укороченными названиями моделей бензопил и их id"""
+        #
         # # Создаем DataFrame из списка
         # df = pd.DataFrame(products)
         #
