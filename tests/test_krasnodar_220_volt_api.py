@@ -15,9 +15,8 @@ class TestTakeCategoryAndProductList():
         print("Метод POST")
         result_post = Krasnodar220VoltApi.category_and_product_list()
         Checking.check_status_code(result_post, 200)
+        validate_data(result_post.json(), Products)
 
-    def test_validate_data(self):
-        validate_data(Krasnodar220VoltApi.category_and_product_list().json(), Products)
 
 
 
