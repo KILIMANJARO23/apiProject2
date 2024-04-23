@@ -1,10 +1,6 @@
 from utils.http_methods import HttpMethod
-from typing import List, Type, Any
-from pydantic import BaseModel, ValidationError
-import re
-import pandas as pd
 
-"""Методы для тестирования Krasnodar220VoltApi"""
+"""Метод для тестирования Krasnodar220VoltApi"""
 
 base_url = "https://krasnodar.220-volt.ru/tracker_advcake/"        #базовая url
 headers = {
@@ -30,30 +26,6 @@ class Krasnodar220VoltApi():
         products = data['products']
         print(products)
 
-
-
-        # """Регулярное выражение для поиска и удаления "Бензопила HYUNDAI"""
-        #
-        # pattern = r"Бензопила HYUNDAI "
-        #
-        # # Проход по каждому словарю в списке и удаление "Бензопила HYUNDAI"
-        # for product in products:
-        #     for key in product:
-        #         product[key] = re.sub(pattern, '', product[key])
-        #
-        # # Вывод обновленного списка
-        # print(products)
-        #
-        #
-        # """Создание Excel файла c укороченными названиями моделей бензопил и их id"""
-        #
-        # # Создаем DataFrame из списка
-        # df = pd.DataFrame(products)
-        #
-        # # Записываем DataFrame в Excel файл
-        # df.to_excel('C:\\Users\\volch\\PycharmProjects\\apiProject2\\Бензопилы.xlsx', index=False)
-        #
-        # print("Данные успешно записаны в файл 'Бензопилы.xlsx'")
 
         return result_post
 

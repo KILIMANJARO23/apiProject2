@@ -4,6 +4,7 @@ from utils.api import Krasnodar220VoltApi
 from utils.pydantic_model import validate_data
 from utils.pydantic_model import Products
 from utils.regular_expression import RegularExpressions
+from utils.data_to_excel import export_to_excel
 
 """Получения информации о категории и продуктах"""
 
@@ -16,10 +17,14 @@ class TestTakeCategoryAndProductList():
         result_post = Krasnodar220VoltApi.category_and_product_list()
         """Проверка статус кода"""
         Checking.check_status_code(result_post, 200)
-        """Валидация данных с помощью Pydantic"""
+        """Валидация полученных даных данных с помощью Pydantic"""
         validate_data(result_post.json(), Products)
-        """Срез с помощью регулярных выражений"""
-        RegularExpressions.creating_a_slice(result_post.json()["products"])
+        """Срез полученных даных с помощью регулярных выражений"""
+        RegularExpressions.creating_a_slice(result_post.json()['products'])
+        data_after_slice = RegularExpressions.creating_a_slice(result_post.json()['products'])
+        """Экспорт данных после среза в Excel файл"""
+        export_to_excel(data_after_slice)
+
 
 
 
